@@ -1,0 +1,16 @@
+{
+  "name": "claudekit-marketplace",
+  "description": "The official claudekit plugin marketplace — Claude Code safety, guardrails, and project memory.",
+  "owner": {
+    "name": "Mitja Eichhorn",
+    "email": "mitja.eichhorn@gmail.com",
+    "url": "https://claudecode-kit.com"
+  },
+  "plugins": [
+    {
+      "name": "claudekit",
+      "source": "./claudekit",
+      "description": "The Claude Code safety plugin: guardrails, project memory, recovery, and live agent state."
+    }
+  ]
+}
