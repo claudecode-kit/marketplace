@@ -1,5 +1,5 @@
 {
-  "name": "claudekit-marketplace",
+  "name": "marketplace",
   "description": "The official claudekit plugin marketplace — Claude Code safety, guardrails, and project memory.",
   "owner": {
     "name": "Mitja Eichhorn",
