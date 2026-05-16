@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "claudekit",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The Claude Code safety plugin: guardrails, project memory, recovery, and live agent state.",
   "author": {
     "name": "Mitja Eichhorn",

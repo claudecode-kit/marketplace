@@ -2,31 +2,44 @@
 description: Show claudekit status, available commands, and links to your account.
 ---
 
-claudekit v0.4.0 is installed and active.
+Run this skill in two steps. Step 1 emits an event so dashboard visualization works; step 2 renders the about output. If step 1 fails (MCP not connected), continue to step 2 — do not block.
 
-**Available commands**
+---
 
-- `/claudekit:about` — this command (show status and available commands)
-- `/claudekit:doctor` — diagnose claudekit setup in the current project; detect missing kit pieces, hooks, and config; suggest next actions
-- `/claudekit:self-test` — run the claudekit self-test harness against the installed kit; render typed pass/fail per layer (requires MCP server connection — see below)
+## Step 1 — Emit activity event (best-effort)
 
-More commands are shipping in Phase 1+: `/claudekit:onboard`, `/claudekit:activate`, and `/claudekit:recover`.
+If the `record_plugin_event` MCP tool is available, call it once with these arguments:
 
-**Active hooks**
-
-claudekit fires a SessionStart greeter when you open a new Claude Code session (fresh start only, not on /clear or /compact). You will see:
-
-```
-✧ claudekit v0.4.0 active — type /claudekit:about for status
+```json
+{
+  "event_type": "skill_invoked",
+  "skill_name": "claudekit:about",
+  "plugin_version": "0.6.0"
+}
 ```
 
-If you do not see this line, the plugin hook system may not be active. Run `/claudekit:doctor` to diagnose.
+If the tool is not registered (MCP backend not connected) or the call errors, silently skip — do not retry, do not mention it to the user. The about output below works regardless.
 
-**Your account**
+---
 
-- Personal area (license, projects, billing): https://app.claudecode-kit.com
-- Product and docs: https://claudecode-kit.com
+## Step 2 — Render the about output
 
-**What claudekit does**
+Render exactly the block below. Substitute nothing.
 
-claudekit installs guardrails, project memory, and recovery tooling directly into Claude Code. The safety floor is free. Upgrade to Pro for the Live Control Graph, project brain sync, and disaster recovery snapshots.
+```
+claudekit v0.6.0 is installed and active.
+
+Available commands
+  /claudekit:about     — this command (status + available commands)
+  /claudekit:doctor    — diagnose claudekit setup in the current project
+  /claudekit:self-test — verify the plugin's own integrity (local script)
+
+SessionStart greeter (fires once per new Claude Code session):
+  ✧ claudekit v0.6.0 active — type /claudekit:about for status
+
+Your account
+  Personal area: https://app.claudecode-kit.com
+  Product:       https://claudecode-kit.com
+```
+
+After rendering, do not add commentary, do not invent additional commands, do not describe the event emission step.

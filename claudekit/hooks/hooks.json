@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '✧ claudekit v0.5.0 active — type /claudekit:about for status'"
+            "command": "echo '✧ claudekit v0.6.0 active — type /claudekit:about for status'"
           }
         ]
       }

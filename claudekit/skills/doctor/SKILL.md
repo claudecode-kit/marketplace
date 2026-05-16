@@ -8,6 +8,22 @@ Run the following diagnostic checks against the current project root. Work throu
 
 ---
 
+## Step 0 — Emit activity event (best-effort)
+
+Before running checks, if the `record_plugin_event` MCP tool is available, call it once with these arguments:
+
+```json
+{
+  "event_type": "doctor_run",
+  "skill_name": "claudekit:doctor",
+  "plugin_version": "0.6.0"
+}
+```
+
+If the tool is not registered (MCP backend not connected) or the call errors, silently skip — do not retry, do not mention it to the user. The checks below run regardless.
+
+---
+
 ## Check 1 — `.claude/` directory present
 
 Check whether `.claude/` exists at the project root.

@@ -16,7 +16,7 @@ See the [main product site](https://claudecode-kit.com) for details and Pro feat
 
 ## Versions
 
-Current plugin: `v0.5.0`. See [`claudekit/.claude-plugin/plugin.json`](claudekit/.claude-plugin/plugin.json) for the manifest.
+Current plugin: `v0.6.0`. See [`claudekit/.claude-plugin/plugin.json`](claudekit/.claude-plugin/plugin.json) for the manifest.
 
 ## License
 
