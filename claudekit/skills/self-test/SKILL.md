@@ -18,7 +18,7 @@ Set `CLAUDE_PLUGIN_ROOT` to the plugin's installed location if the environment v
 
 If the script is not found or not executable, tell the user:
 
-> Plugin payload appears corrupted. Try `/plugin uninstall claudekit@claudekit-marketplace` followed by `/plugin install claudekit@claudekit-marketplace`.
+> Plugin payload appears corrupted. Try `/plugin uninstall claudekit@marketplace` followed by `/plugin install claudekit@marketplace`.
 
 Stop here if the script is missing. Do not fabricate output.
 

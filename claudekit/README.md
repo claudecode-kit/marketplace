@@ -50,7 +50,7 @@ Inside Claude Code (interactive), run these commands in sequence:
 
 ```
 /plugin marketplace add /Applications/MAMP/htdocs/prj01-claudecode-kit.com/plugins
-/plugin install claudekit@claudekit-marketplace
+/plugin install claudekit@marketplace
 /reload-plugins
 /claudekit:about
 ```
@@ -61,7 +61,7 @@ To install via the CLI instead of inside Claude Code:
 
 ```bash
 claude plugin marketplace add /Applications/MAMP/htdocs/prj01-claudecode-kit.com/plugins
-claude plugin install claudekit@claudekit-marketplace
+claude plugin install claudekit@marketplace
 ```
 
 Then restart Claude Code (or run `/reload-plugins` inside it) to activate.
